@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Welcome to Messaging!</h1>
+  <div id="userDetails"></div>
+  <button onclick="logout()">Logout</button>
+
+  <script>
+    async function loadUser() {
+      const res = await fetch('/user');
+      if (res.ok) {
+        const user = await res.json();
+        document.getElementById('userDetails').innerHTML = `
+          <h3>Hello, ${user.name}</h3>
+          <p>Email: ${user.email}</p>
+        `;
+      } else {
+        window.location.href = 'login.html';
+      }
+    }
+    loadUser();
+
+    function logout() {
+      window.location.href = '/logout';
+    }
+  </script>
+</body>
+</html>

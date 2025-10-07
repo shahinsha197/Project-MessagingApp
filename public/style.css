@@ -1,0 +1,21 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 100px;
+}
+input {
+  padding: 8px;
+  margin: 5px;
+}
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background: teal;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: darkslategray;
+}
